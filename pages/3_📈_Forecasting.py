@@ -18,21 +18,10 @@ from utils.forecasting import (
     territory_growth_potential,
 )
 from utils.charts import BRAND_COLORS, forecast_line, kpi_gauge, _apply_layout
+from utils.styles import inject_css
 
 st.set_page_config(page_title="Sales Forecasting", page_icon="📈", layout="wide")
-
-st.markdown("""
-<style>
-    .block-container { padding-top: 1.5rem; }
-    .target-card {
-        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-        padding: 1.2rem; border-radius: 12px; border-left: 4px solid #0066CC;
-        margin-bottom: 0.5rem;
-    }
-    .target-card h4 { color: #0066CC; margin: 0; }
-    .target-card p { margin: 0.3rem 0 0 0; font-size: 1.4rem; font-weight: 700; color: #1a1a2e; }
-</style>
-""", unsafe_allow_html=True)
+inject_css()
 
 df = load_customer_data()
 if df.empty:

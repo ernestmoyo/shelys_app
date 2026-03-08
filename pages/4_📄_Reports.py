@@ -15,20 +15,10 @@ from utils.forecasting import (
     territory_growth_potential, TARGETS,
 )
 
-st.set_page_config(page_title="Reports", page_icon="📄", layout="wide")
+from utils.styles import inject_css
 
-st.markdown("""
-<style>
-    .block-container { padding-top: 1.5rem; }
-    .report-card {
-        background: white; padding: 1.5rem; border-radius: 12px;
-        border: 1px solid #e8ecf1; box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-        text-align: center; height: 100%;
-    }
-    .report-card h3 { color: #0066CC; }
-    .report-card p { color: #555; font-size: 0.9rem; }
-</style>
-""", unsafe_allow_html=True)
+st.set_page_config(page_title="Reports", page_icon="📄", layout="wide")
+inject_css()
 
 df = load_customer_data()
 if df.empty:

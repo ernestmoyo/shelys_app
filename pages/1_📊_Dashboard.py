@@ -13,20 +13,10 @@ from utils.charts import (
     territory_pie, category_bar, product_sales_bar,
     location_treemap, top_clients_bar, product_radar, sales_heatmap,
 )
+from utils.styles import inject_css
 
 st.set_page_config(page_title="Sales Dashboard", page_icon="📊", layout="wide")
-
-st.markdown("""
-<style>
-    .block-container { padding-top: 1.5rem; }
-    .metric-card {
-        background: white; padding: 1rem; border-radius: 10px;
-        border-left: 4px solid #0066CC; box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-    }
-    .metric-card h4 { color: #666; font-size: 0.8rem; margin: 0; }
-    .metric-card h2 { color: #1a1a2e; margin: 0.2rem 0 0 0; }
-</style>
-""", unsafe_allow_html=True)
+inject_css()
 
 df = load_customer_data()
 if df.empty:

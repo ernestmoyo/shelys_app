@@ -12,31 +12,11 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from utils.data_loader import load_customer_data, PRODUCTS
 from utils.charts import BRAND_COLORS
+from utils.styles import inject_css
 import plotly.express as px
 
 st.set_page_config(page_title="Client CRM", page_icon="👥", layout="wide")
-
-st.markdown("""
-<style>
-    .block-container { padding-top: 1.5rem; }
-    .client-card {
-        background: white; padding: 1.2rem; border-radius: 12px;
-        border: 1px solid #e8ecf1; box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-        margin-bottom: 0.8rem;
-    }
-    .client-card h4 { color: #0066CC; margin: 0 0 0.3rem 0; }
-    .client-card p { margin: 0.1rem 0; color: #555; font-size: 0.9rem; }
-    .tag {
-        display: inline-block; padding: 0.15rem 0.6rem; border-radius: 20px;
-        font-size: 0.75rem; font-weight: 600; margin-right: 0.3rem;
-    }
-    .tag-pharmacy { background: #e3f2fd; color: #0066CC; }
-    .tag-dldm { background: #e8f5e9; color: #2e7d32; }
-    .tag-shop { background: #fff3e0; color: #e65100; }
-    .tag-dsm { background: #f3e5f5; color: #7b1fa2; }
-    .tag-tanga { background: #e0f2f1; color: #00695c; }
-</style>
-""", unsafe_allow_html=True)
+inject_css()
 
 df = load_customer_data()
 if df.empty:

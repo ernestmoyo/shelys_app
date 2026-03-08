@@ -11,6 +11,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
 
 from utils.data_loader import load_customer_data, PRODUCTS
+from utils.styles import inject_css
 
 # Page config
 st.set_page_config(
@@ -20,90 +21,7 @@ st.set_page_config(
     initial_sidebar_state="expanded",
 )
 
-# Custom CSS
-st.markdown("""
-<style>
-    /* Global */
-    .block-container { padding-top: 1.5rem; }
-
-    /* Sidebar */
-    [data-testid="stSidebar"] {
-        background: linear-gradient(180deg, #0a1628 0%, #1a2744 100%);
-    }
-    [data-testid="stSidebar"] .stMarkdown h1,
-    [data-testid="stSidebar"] .stMarkdown h2,
-    [data-testid="stSidebar"] .stMarkdown h3,
-    [data-testid="stSidebar"] .stMarkdown p,
-    [data-testid="stSidebar"] .stMarkdown li {
-        color: #e0e0e0 !important;
-    }
-
-    /* KPI Cards */
-    .kpi-card {
-        background: linear-gradient(135deg, #0066CC 0%, #0052a3 100%);
-        padding: 1.2rem;
-        border-radius: 12px;
-        color: white;
-        text-align: center;
-        box-shadow: 0 4px 15px rgba(0,102,204,0.3);
-    }
-    .kpi-card h3 { margin: 0; font-size: 0.85rem; opacity: 0.85; font-weight: 400; }
-    .kpi-card h1 { margin: 0.3rem 0 0 0; font-size: 2rem; font-weight: 700; }
-
-    .kpi-card-green {
-        background: linear-gradient(135deg, #2EC4B6 0%, #1a9e92 100%);
-        padding: 1.2rem; border-radius: 12px; color: white;
-        text-align: center; box-shadow: 0 4px 15px rgba(46,196,182,0.3);
-    }
-    .kpi-card-green h3 { margin: 0; font-size: 0.85rem; opacity: 0.85; font-weight: 400; }
-    .kpi-card-green h1 { margin: 0.3rem 0 0 0; font-size: 2rem; font-weight: 700; }
-
-    .kpi-card-orange {
-        background: linear-gradient(135deg, #FF6B35 0%, #e05520 100%);
-        padding: 1.2rem; border-radius: 12px; color: white;
-        text-align: center; box-shadow: 0 4px 15px rgba(255,107,53,0.3);
-    }
-    .kpi-card-orange h3 { margin: 0; font-size: 0.85rem; opacity: 0.85; font-weight: 400; }
-    .kpi-card-orange h1 { margin: 0.3rem 0 0 0; font-size: 2rem; font-weight: 700; }
-
-    .kpi-card-purple {
-        background: linear-gradient(135deg, #7209B7 0%, #5c0796 100%);
-        padding: 1.2rem; border-radius: 12px; color: white;
-        text-align: center; box-shadow: 0 4px 15px rgba(114,9,183,0.3);
-    }
-    .kpi-card-purple h3 { margin: 0; font-size: 0.85rem; opacity: 0.85; font-weight: 400; }
-    .kpi-card-purple h1 { margin: 0.3rem 0 0 0; font-size: 2rem; font-weight: 700; }
-
-    /* Welcome banner */
-    .welcome-banner {
-        background: linear-gradient(135deg, #0a1628 0%, #1a3a5c 50%, #0066CC 100%);
-        padding: 2.5rem 2rem;
-        border-radius: 16px;
-        color: white;
-        margin-bottom: 1.5rem;
-        box-shadow: 0 8px 30px rgba(0,0,0,0.15);
-    }
-    .welcome-banner h1 { font-size: 2.2rem; margin-bottom: 0.3rem; }
-    .welcome-banner p { opacity: 0.85; font-size: 1.05rem; }
-
-    /* Nav cards */
-    .nav-card {
-        background: white;
-        padding: 1.5rem;
-        border-radius: 12px;
-        border: 1px solid #e8ecf1;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-        transition: all 0.2s;
-        height: 100%;
-    }
-    .nav-card:hover {
-        box-shadow: 0 6px 20px rgba(0,102,204,0.15);
-        border-color: #0066CC;
-    }
-    .nav-card h3 { color: #0066CC; margin-bottom: 0.5rem; }
-    .nav-card p { color: #555; font-size: 0.9rem; }
-</style>
-""", unsafe_allow_html=True)
+inject_css()
 
 # Sidebar
 with st.sidebar:
