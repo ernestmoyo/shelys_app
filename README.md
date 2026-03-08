@@ -1,8 +1,6 @@
-# Shelys Sales Suite
+# Sales Suite
 
-A sales intelligence platform for **Malack A. Tweve** — Shelys Pharmaceuticals (Aspen Pharma), covering the **DSM & Tanga** regions in Tanzania.
-
-Built with [Streamlit](https://streamlit.io/) for interactive analytics, client management, forecasting, and automated reporting.
+A regional sales intelligence platform built with [Streamlit](https://streamlit.io/) for interactive analytics, client management, forecasting, and automated reporting.
 
 ---
 
@@ -15,14 +13,14 @@ Built with [Streamlit](https://streamlit.io/) for interactive analytics, client 
 - Top client rankings
 
 ### Client CRM
-- Search and filter across 427+ clients
+- Search and filter across your client base
 - Card view and table view with contact details
 - Per-client product breakdown
 - Channel and location analytics
 
 ### Sales Forecasting
-- 2026 quarterly and monthly sales projections
-- Client growth modeling (target: 512 clients)
+- Quarterly and monthly sales projections
+- Client growth modeling
 - Territory growth potential analysis
 - KPI gauges tracking progress against targets
 
@@ -53,27 +51,6 @@ streamlit run Home.py
 ```
 
 Open [http://localhost:8501](http://localhost:8501) in your browser.
-
----
-
-## Data
-
-The app uses the Malack/Shelys customer database covering:
-- **427 clients** across DSM and Tanga territories
-- **5 product lines**: Action, GMLT, GMCT, WWGW, BTZ
-- **4 channels**: Pharmacy, DLDM, Shop, Supermarket
-- **40+ locations** across both territories
-
----
-
-## 2026 Targets
-
-| Metric | Target |
-|---|---|
-| Revenue Growth | 25% |
-| New Clients | 85 |
-| Retention Rate | 95% |
-| Total Clients | 512 |
 
 ---
 
